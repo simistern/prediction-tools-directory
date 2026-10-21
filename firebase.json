@@ -6,6 +6,28 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/category/analytics",
+        "destination": "/category/analysis-tools",
+        "type": 301
+      },
+      {
+        "source": "/category/analytics/",
+        "destination": "/category/analysis-tools",
+        "type": 301
+      },
+      {
+        "source": "/category/infrastructure",
+        "destination": "/category/infrastructure-&-apis",
+        "type": 301
+      },
+      {
+        "source": "/category/infrastructure/",
+        "destination": "/category/infrastructure-&-apis",
+        "type": 301
+      }
     ]
   }
 }
