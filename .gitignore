@@ -20,3 +20,6 @@ Thumbs.db
 
 # Firebase
 .firebase/
+
+# Git worktrees used for kanban tasks
+.worktrees/
