@@ -38,6 +38,19 @@
             "iOS",
             "Android"
         ],
+        "eligibility": "Two products with separate eligibility. polymarket.com is the international, crypto venue: signup is an email address or a self-custody wallet, and trading is closed to US IPs, which the geoblock documentation classes as close-only on both frontend and API, alongside a long restricted list that includes the UK, Germany, France, Australia, Brazil, Singapore, Thailand and four Canadian provinces, with OFAC-sanctioned countries blocked outright. polymarket.us is the US venue, operated by QCX LLC as a CFTC-designated contract market: US residents open an account in the app and must pass KYC (legal name, residential address, date of birth, phone, Social Security number, plus a government ID and selfie check if the automated check asks for more) before they can deposit or trade. Eligibility is not the same as legality: the geoblock endpoint is the operational test for the international venue, and state courts are still contesting the US product. Sources: Polymarket Documentation, 'Geographic Restrictions'; Polymarket US Documentation, 'Create an Account' and 'What is Polymarket US?'; checked 2026-10-21.",
+        "apiAccess": "Documented for both venues. The international stack at docs.polymarket.com is split into a Gamma API (gamma-api.polymarket.com) for events and market metadata, a CLOB API (clob.polymarket.com) for order-book reads and order placement, a Data API v2 for positions, activity and leaderboards, WebSocket streams for market and account events, and a geoblock endpoint that reports whether the caller's IP may trade. Public reads need no key; trading is signed by the account's signer key. Polymarket US has its own documented API at docs.polymarket.us: a keyless public gateway (gateway.polymarket.us) for markets, events and search, and an authenticated api.polymarket.us for orders, portfolio and balances with two WebSocket streams, keys issued through the app after identity verification. Sources: docs.polymarket.com, 'Overview' and 'Geographic Restrictions'; docs.polymarket.us, 'Introduction' and 'Authentication'; checked 2026-10-21.",
+        "goodFor": [
+            "Crypto-native trading on Polygon: non-custodial, USDC collateral, settlement visible on-chain",
+            "Building on documented APIs: Gamma, CLOB and Data for the international venue, a public plus authenticated API for the US one",
+            "Trading from most countries outside the geoblock list without a brokerage account or USD bank rails",
+            "US residents who specifically want a CFTC-regulated, USD venue, which is what polymarket.us is"
+        ],
+        "notGoodFor": [
+            "US traders who want polymarket.com: the international venue is close-only for US IPs and its API rejects orders from blocked regions",
+            "Privacy from KYC at the US venue: Polymarket US wants SSN, date of birth and a government ID before you can deposit",
+            "Anyone in a close-only jurisdiction such as the UK, Germany, France, Australia or much of Canada who wants to open new positions"
+        ],
         "features": [
             "Binary Markets",
             "Order Book",
@@ -81,6 +94,19 @@
             "Web",
             "iOS",
             "Android"
+        ],
+        "eligibility": "Individuals aged 18 or older who pass identity and document verification at signup, which Kalshi says it runs to meet CFTC identity rules. Kalshi now takes members from many countries as well as the US; international eligibility is bounded by the restricted jurisdictions in Section VI of the Member Agreement, and Kalshi puts the legality question on the member, saying it gives no individual legal or eligibility advice. Federal DCM status does not settle the state question: sports, election and entertainment contracts are geofenced for customers in Nevada (Nevada Gaming Control Board agreement, geofencing due 12 August 2026), Washington (state court order, August 2026) and Michigan, with litigation live in several other states. Sources: Kalshi Help Center, 'Signing Up as an Individual' (article dated 10 March 2026) and 'Can I trade on Kalshi from outside the United States?' (20 March 2026); Kalshi Member Agreement, Section VI; CFTC Release 8302-20 designating KalshiEX LLC; Nevada GCB release, 24 July 2026; CoinDesk, 21 August 2026. Checked 2026-10-21.",
+        "apiAccess": "Documented and public. docs.kalshi.com covers a REST Trade API (external-api.kalshi.com/trade-api/v2) and a WebSocket streaming API (external-api-ws.kalshi.com/trade-api/ws/v2) for event contracts, plus FIX sessions and a separate API for perpetual futures. Requests are signed with an RSA key created in account settings and sent as KALSHI-ACCESS-KEY, KALSHI-ACCESS-TIMESTAMP and KALSHI-ACCESS-SIGNATURE, which covers market data, portfolio, and order placement and cancellation; a demo environment mirrors production for testing. Sources: Kalshi API documentation, 'Introduction', 'API Keys' and 'API Environments and Endpoints', checked 2026-10-21.",
+        "goodFor": [
+            "US-regulated event contracts in USD at a CFTC-designated exchange (KalshiEX)",
+            "Automation: documented REST, WebSocket and FIX APIs with a demo environment",
+            "Economics, financial data and weather markets alongside sports and elections",
+            "International members, where the country is not on the Member Agreement's restricted list"
+        ],
+        "notGoodFor": [
+            "Sports, election and entertainment contracts in Nevada, Washington and Michigan, which are geofenced",
+            "On-chain settlement or self-custody: Kalshi is a custodial, fiat exchange",
+            "Traders in a jurisdiction listed as restricted in Section VI of the Member Agreement"
         ],
         "features": [
             "Binary Event Contracts",
