@@ -52,6 +52,14 @@ export type Tool = {
 	apiAccess?: string;
 	goodFor?: string[];
 	notGoodFor?: string[];
+
+	/**
+	 * Slugs of tools this one has a researched comparison page against.
+	 * Pairs are mutual (both records list each other) and drive /compare pages,
+	 * sitemap entries and the profile cross-links. Researched demand lives in the
+	 * card that introduced each pair; never add a slug here without volume evidence.
+	 */
+	compareWith?: string[];
 };
 
 export const categoryToSlug = (category: string): string =>

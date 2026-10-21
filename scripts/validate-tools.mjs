@@ -224,11 +224,71 @@ for (const [index, tool] of tools.entries()) {
 		}
 	}
 
+	if (tool.compareWith !== undefined) {
+		if (!Array.isArray(tool.compareWith)) {
+			errors.push(`${label}: "compareWith" must be an array of tool slugs`);
+		} else {
+			const declared = new Set();
+
+			for (const otherSlug of tool.compareWith) {
+				if (typeof otherSlug !== 'string' || otherSlug.trim().length === 0) {
+					errors.push(`${label}: all "compareWith" entries must be non-empty tool slugs`);
+					continue;
+				}
+
+				if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(otherSlug)) {
+					errors.push(`${label}: "compareWith" entry "${otherSlug}" must be kebab-case`);
+				}
+
+				if (otherSlug === tool.slug) {
+					errors.push(`${label}: "compareWith" must not reference the tool itself`);
+				}
+
+				if (declared.has(otherSlug)) {
+					errors.push(`${label}: duplicate "compareWith" entry "${otherSlug}"`);
+				}
+
+				declared.add(otherSlug);
+			}
+		}
+	}
+
 	if (tool.metadata !== undefined && (typeof tool.metadata !== 'object' || tool.metadata === null || Array.isArray(tool.metadata))) {
 		errors.push(`${label}: "metadata" must be a Record<string, string> when provided`);
 	}
 
 	counts[tool.category] = (counts[tool.category] || 0) + 1;
+}
+
+// Cross-record checks: compareWith has to point at a real tool, and every pair has to be mutual.
+// A page generated from one side only would be linked from one profile and orphaned from the other.
+const toolsBySlug = new Map(tools.filter((tool) => tool?.slug).map((tool) => [tool.slug, tool]));
+
+for (const tool of tools) {
+	if (!tool?.slug || !Array.isArray(tool.compareWith)) {
+		continue;
+	}
+
+	for (const otherSlug of tool.compareWith) {
+		if (typeof otherSlug !== 'string' || otherSlug === tool.slug) {
+			continue;
+		}
+
+		const other = toolsBySlug.get(otherSlug);
+
+		if (!other) {
+			errors.push(`(${tool.slug}): "compareWith" references unknown tool slug "${otherSlug}"`);
+			continue;
+		}
+
+		const mutual = Array.isArray(other.compareWith) && other.compareWith.includes(tool.slug);
+
+		if (!mutual) {
+			errors.push(
+				`(${tool.slug}): "compareWith" lists "${otherSlug}" but "${otherSlug}" does not list "${tool.slug}" - compare pairs must be mutual, or only one profile links the page`
+			);
+		}
+	}
 }
 
 if (warnings.length > 0) {

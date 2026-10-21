@@ -1,5 +1,6 @@
 import { error } from '@sveltejs/kit';
 import tools from '$lib/data/tools.json';
+import { compareLinksFor } from '$lib/data/compare';
 import type { PageLoad, EntryGenerator } from './$types';
 
 export const load: PageLoad = ({ params }) => {
@@ -15,7 +16,10 @@ export const load: PageLoad = ({ params }) => {
 
     return {
         tool,
-        relatedTools
+        relatedTools,
+        // Driven by `compareWith` on the record: one link per researched pair, so a new
+        // pair shows up on both profiles without touching this page.
+        compareLinks: compareLinksFor(tool.slug)
     };
 };
 

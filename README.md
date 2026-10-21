@@ -55,11 +55,23 @@ Alternatively, you can [Open an Issue](https://github.com/tgel0/prediction-tools
   "lastVerified": "2026-05-01",
   "blockchain": ["Polygon", "Solana"],
   "supportedMarkets": ["Polymarket", "Kalshi"],
+  "compareWith": ["polymarket", "kalshi"],
+  "eligibility": "Who can open an account, with a source and a date",
+  "apiAccess": "Whether there is a documented API, with a source and a date",
+  "goodFor": ["Short reason to pick it"],
+  "notGoodFor": ["Short reason it is the wrong fit"],
   "platform": ["Web", "iOS", "Android", "Telegram", "Discord", "Twitter"],
   "features": ["Feature One", "Feature Two"],
   "isPromoted": false
 }
 ```
+
+`compareWith` lists the tool slugs this record has a researched comparison page against. Two rules:
+declarations must be mutual (both records list each other, enforced by `npm run validate:data`), and a
+pair is only declared when there is keyword-demand evidence for it — never add one on a hunch. Each
+declared pair is rendered from the two records into `/compare/<a>-vs-<b>` (slugs in alphabetical
+order), linked from both profiles and added to the sitemap automatically. `/compare/polymarket-vs-kalshi`
+is the one hand-written page; it keeps its canonical slug and is excluded from the generated template.
 
 ## 🏃‍♂️ Running Locally
 

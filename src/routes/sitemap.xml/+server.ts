@@ -1,5 +1,6 @@
 import tools from '$lib/data/tools.json';
 import { categoryToSlug } from '$lib/data/schema';
+import { comparePairs } from '$lib/data/compare';
 
 export const prerender = true;
 
@@ -25,9 +26,9 @@ export async function GET() {
         '/terms'
     ];
 
-    const compareSlugs = [
-        'polymarket-vs-kalshi'
-    ];
+    // One entry per researched pair, derived from `compareWith` on the records: hand-written
+    // pages keep their own slug, generated ones follow <a>-vs-<b> in alphabetical order.
+    const compareSlugs = comparePairs().map((pair) => pair.slug);
 
     // Hand-maintained editorial pages. A dated monthly edition is not a daily page, so it gets
     // its own changefreq rather than riding on the 'daily' static list above.
