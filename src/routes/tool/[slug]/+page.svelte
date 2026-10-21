@@ -10,6 +10,24 @@
     // Cast from JSON union type to our full schema type
     $: t = tool as unknown as Tool;
 
+    // Cross-page compare links for the venues that have a written comparison.
+    const comparisons: Record<string, { href: string; label: string; blurb: string }> = {
+        polymarket: {
+            href: "/compare/polymarket-vs-kalshi",
+            label: "How Polymarket compares to Kalshi on fees, access and settlement",
+            blurb:
+                "a dated comparison with both fee formulas, who can actually trade in which country, and how each venue settles",
+        },
+        kalshi: {
+            href: "/compare/polymarket-vs-kalshi",
+            label: "How Kalshi compares to Polymarket on fees, access and settlement",
+            blurb:
+                "a dated comparison with both fee formulas, who can actually trade in which country, and how each venue settles",
+        },
+    };
+
+    $: comparison = comparisons[t.slug] ?? null;
+
     let copied = false;
     async function copyToClipboard() {
         try {
@@ -293,6 +311,23 @@
                             {t.description}
                         </p>
                     </div>
+
+                    {#if comparison}
+                    <div class="border border-neon-green/30 bg-terminal-black p-5">
+                        <p class="text-sm font-mono text-gray-300 leading-relaxed">
+                            <span class="text-neon-green mr-2">⬌</span>
+                            <a
+                                href={comparison.href}
+                                class="text-neon-green underline decoration-dotted underline-offset-2 hover:text-white transition-colors"
+                            >
+                                {comparison.label}
+                            </a>
+                            <span class="text-gray-500">
+                                — {comparison.blurb}. Every figure sourced and dated.
+                            </span>
+                        </p>
+                    </div>
+                    {/if}
 
                     {#if t.pricingDetails}
                     <div class="border-t border-terminal-slate pt-6">
