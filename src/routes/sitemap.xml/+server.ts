@@ -29,6 +29,12 @@ export async function GET() {
         'polymarket-vs-kalshi'
     ];
 
+    // Hand-maintained editorial pages. A dated monthly edition is not a daily page, so it gets
+    // its own changefreq rather than riding on the 'daily' static list above.
+    const editorialPages = [
+        '/best/prediction-market-platforms'
+    ];
+
     const categories = [...new Set(tools.map(tool => tool.category))];
 
     const urlEntries = [
@@ -51,6 +57,11 @@ export async function GET() {
             loc: `${site}/compare/${slug}`,
             changefreq: 'weekly',
             priority: '0.8'
+        })),
+        ...editorialPages.map(page => ({
+            loc: `${site}${page}`,
+            changefreq: 'monthly',
+            priority: '0.9'
         }))
     ];
 

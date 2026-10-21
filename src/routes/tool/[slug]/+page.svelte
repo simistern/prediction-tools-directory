@@ -11,7 +11,7 @@
     $: t = tool as unknown as Tool;
 
     // Cross-page compare links for the venues that have a written comparison.
-    const comparisons: Record<string, { href: string; label: string; blurb: string }> = {
+    const comparisons: Record<string, { href: string; label: string; blurb: string; also?: { href: string; label: string }[] }> = {
         polymarket: {
             href: "/compare/polymarket-vs-kalshi",
             label: "How Polymarket compares to Kalshi on fees, access and settlement",
@@ -23,6 +23,16 @@
             label: "How Kalshi compares to Polymarket on fees, access and settlement",
             blurb:
                 "a dated comparison with both fee formulas, who can actually trade in which country, and how each venue settles",
+        },
+        robinhood: {
+            href: "/compare/polymarket-vs-kalshi",
+            label: "Robinhood resells exchange contracts, so the venue comparison still decides the cost",
+            blurb:
+                "a dated comparison of two of the exchanges behind its order flow, with both fee formulas and who can trade where",
+            also: [
+                { href: "/tool/polymarket", label: "Polymarket profile" },
+                { href: "/tool/kalshi", label: "Kalshi profile" },
+            ],
         },
     };
 
@@ -124,7 +134,7 @@
         "description": t.description,
         "url": t.url,
         "applicationCategory": t.category,
-        "operatingSystem": "Web"
+        "operatingSystem": t.platform && t.platform.length > 0 ? t.platform.join(', ') : "Web"
     })}</script>`}
 </svelte:head>
 
@@ -326,6 +336,17 @@
                                 — {comparison.blurb}. Every figure sourced and dated.
                             </span>
                         </p>
+                        {#if comparison.also}
+                        <p class="text-xs font-mono text-gray-500 mt-3">
+                            Also on this site:
+                            {#each comparison.also as link, i}
+                                <a
+                                    href={link.href}
+                                    class="text-neon-blue hover:text-white underline decoration-dotted underline-offset-2"
+                                >{link.label}</a>{i < comparison.also.length - 1 ? " · " : ""}
+                            {/each}
+                        </p>
+                        {/if}
                     </div>
                     {/if}
 
@@ -338,6 +359,32 @@
                         </h3>
                         <p class="text-gray-300 font-mono text-sm leading-relaxed">
                             {t.pricingDetails}
+                        </p>
+                    </div>
+                    {/if}
+
+                    {#if t.eligibility}
+                    <div class="border-t border-terminal-slate pt-6">
+                        <h3
+                            class="text-sm font-mono text-gray-500 uppercase tracking-wider mb-3 flex items-center"
+                        >
+                            <span class="text-neon-green mr-2">⬡</span>Eligibility
+                        </h3>
+                        <p class="text-gray-300 font-mono text-sm leading-relaxed">
+                            {t.eligibility}
+                        </p>
+                    </div>
+                    {/if}
+
+                    {#if t.apiAccess}
+                    <div class="border-t border-terminal-slate pt-6">
+                        <h3
+                            class="text-sm font-mono text-gray-500 uppercase tracking-wider mb-3 flex items-center"
+                        >
+                            <span class="text-neon-green mr-2">⌘</span>Data and API access
+                        </h3>
+                        <p class="text-gray-300 font-mono text-sm leading-relaxed">
+                            {t.apiAccess}
                         </p>
                     </div>
                     {/if}
@@ -357,6 +404,48 @@
                             </li>
                             {/each}
                         </ul>
+                    </div>
+                    {/if}
+
+                    {#if (t.goodFor && t.goodFor.length > 0) || (t.notGoodFor && t.notGoodFor.length > 0)}
+                    <div class="border-t border-terminal-slate pt-6">
+                        <h3
+                            class="text-sm font-mono text-gray-500 uppercase tracking-wider mb-3 flex items-center"
+                        >
+                            <span class="text-neon-green mr-2">±</span>Good for, not good for
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            {#if t.goodFor && t.goodFor.length > 0}
+                            <div class="border-l-2 border-neon-green pl-4">
+                                <span class="text-neon-green font-bold uppercase block mb-2 text-xs tracking-wider font-mono">
+                                    Good for
+                                </span>
+                                <ul class="space-y-2">
+                                    {#each t.goodFor as item}
+                                    <li class="flex items-start space-x-2 text-gray-300 font-mono text-sm">
+                                        <span class="text-neon-green mt-0.5 shrink-0">›</span>
+                                        <span>{item}</span>
+                                    </li>
+                                    {/each}
+                                </ul>
+                            </div>
+                            {/if}
+                            {#if t.notGoodFor && t.notGoodFor.length > 0}
+                            <div class="border-l-2 border-terminal-slate pl-4">
+                                <span class="text-gray-500 font-bold uppercase block mb-2 text-xs tracking-wider font-mono">
+                                    Not good for
+                                </span>
+                                <ul class="space-y-2">
+                                    {#each t.notGoodFor as item}
+                                    <li class="flex items-start space-x-2 text-gray-400 font-mono text-sm">
+                                        <span class="text-gray-600 mt-0.5 shrink-0">–</span>
+                                        <span>{item}</span>
+                                    </li>
+                                    {/each}
+                                </ul>
+                            </div>
+                            {/if}
+                        </div>
                     </div>
                     {/if}
 

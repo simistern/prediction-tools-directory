@@ -86,6 +86,60 @@
         ]
     },
     {
+        "id": "robinhood",
+        "name": "Robinhood",
+        "slug": "robinhood",
+        "shortDescription": "Regulated US event contracts from Robinhood Derivatives, traded in the mobile app.",
+        "description": "Robinhood sells binary Yes/No event contracts through Robinhood Derivatives, LLC, a CFTC-registered futures commission merchant that routes orders to CFTC-regulated exchanges: KalshiEX, ForecastEx, Rothera Exchange and Clearing, and the North American Derivatives Exchange, plus a selection of football contracts routed to Crypto.com and OG.com's exchange since 8 September 2026. The prediction markets hub opened on 17 March 2025 with a fed funds contract and the college basketball tournaments; pro and college football arrived on 19 August 2025. Contracts now span sports, politics and elections, economics and financial data, crypto, climate and weather, commodities and entertainment. Trading is mobile-app only and US-only, and needs a separately approved derivatives account.",
+        "category": "Platforms",
+        "url": "https://robinhood.com/us/en/prediction-markets/",
+        "xUrl": "https://x.com/RobinhoodApp",
+        "tags": [
+            "Regulated",
+            "US",
+            "CFTC",
+            "Event Contracts",
+            "Brokerage",
+            "Sports"
+        ],
+        "isPromoted": false,
+        "pricing": "Freemium",
+        "pricingDetails": "Commission has been probability-weighted since 1 June 2026: k x p x (1 - p) x contracts, where k is 10% without Robinhood Gold or 5% with Gold (a $5 monthly subscription). Rounded up to the nearest $0.01 per trade and capped at $0.01 per contract, so the commission peaks near 50c and nearly vanishes at 1c and 99c. Partner exchanges charge their own fee on top, up to about $0.01 per contract, on both opening and closing trades. Source: Robinhood Help Center, 'Event contracts overview', checked 2026-10-21.",
+        "access": "Public",
+        "status": "active",
+        "addedDate": "2026-10-21",
+        "supportedMarkets": [
+            "Robinhood"
+        ],
+        "platform": [
+            "iOS",
+            "Android"
+        ],
+        "eligibility": "US residents aged 18 or older, with an individual Robinhood brokerage account and a separately approved Robinhood Derivatives account, applied for inside the app. Event contracts are not available in all states: Maryland and Nevada residents cannot trade sports event contracts, and Michigan residents could not open new sports event contracts as of 9 September 2026. Robinhood says further state restrictions may apply and that the app holds the current list. Source: Robinhood Help Center, 'Event contracts overview', checked 2026-10-21.",
+        "apiAccess": "None published for event contracts. Robinhood's developer documentation at docs.robinhood.com covers the Robinhood Crypto Trading API only, and prediction markets can be traded in the mobile app only, so there is no documented endpoint for reading or placing event-contract orders. Sources: Robinhood Help Center, 'Trading event contracts'; docs.robinhood.com, checked 2026-10-21.",
+        "goodFor": [
+            "Trading sports, election and economics contracts inside a US brokerage account you already use",
+            "Cheap trades at the price extremes: the probability-weighted commission shrinks toward 1c and 99c",
+            "Anyone who wants CFTC-regulated event contracts in USD without a crypto wallet or gas fees"
+        ],
+        "notGoodFor": [
+            "Automation: no event-contract API is published",
+            "Desktop trading: the web version is view-only and Robinhood Legend does not carry event contracts",
+            "Order-book analysis: the app shows prices and volume, not full market depth",
+            "Traders outside the US"
+        ],
+        "features": [
+            "Binary Yes/No Event Contracts",
+            "Sports and Football Markets",
+            "Politics and Elections",
+            "Economics and Financial Data",
+            "Crypto, Climate and Entertainment",
+            "Limit Orders (IOC and GTD)",
+            "Separate Derivatives Account Required",
+            "App-only Trading"
+        ]
+    },
+    {
         "id": "predict-fun",
         "name": "Predict",
         "slug": "predict-fun",

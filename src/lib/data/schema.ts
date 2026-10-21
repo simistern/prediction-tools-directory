@@ -46,6 +46,12 @@ export type Tool = {
 	acquiredBy?: string;
 	addedDate?: string;
 	lastVerified?: string;
+
+	// Profile content blocks — rendered only when present
+	eligibility?: string;
+	apiAccess?: string;
+	goodFor?: string[];
+	notGoodFor?: string[];
 };
 
 export const categoryToSlug = (category: string): string =>

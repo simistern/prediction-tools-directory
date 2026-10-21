@@ -201,6 +201,29 @@ for (const [index, tool] of tools.entries()) {
 		errors.push(`${label}: "pricingDetails" must be a non-empty string when provided`);
 	}
 
+	for (const field of ['eligibility', 'apiAccess']) {
+		if (tool[field] !== undefined && (typeof tool[field] !== 'string' || tool[field].trim().length === 0)) {
+			errors.push(`${label}: "${field}" must be a non-empty string when provided`);
+		}
+	}
+
+	for (const field of ['goodFor', 'notGoodFor']) {
+		if (tool[field] === undefined) {
+			continue;
+		}
+
+		if (!Array.isArray(tool[field])) {
+			errors.push(`${label}: "${field}" must be an array`);
+			continue;
+		}
+
+		for (const entry of tool[field]) {
+			if (typeof entry !== 'string' || entry.trim().length === 0) {
+				errors.push(`${label}: all "${field}" entries must be non-empty strings`);
+			}
+		}
+	}
+
 	if (tool.metadata !== undefined && (typeof tool.metadata !== 'object' || tool.metadata === null || Array.isArray(tool.metadata))) {
 		errors.push(`${label}: "metadata" must be a Record<string, string> when provided`);
 	}

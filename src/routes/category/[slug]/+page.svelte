@@ -89,6 +89,23 @@
         </div>
     </div>
 
+    {#if categorySlug === "platforms"}
+    <div class="border border-neon-green/30 bg-terminal-dark p-5 mb-8">
+        <p class="text-sm font-mono text-gray-300 leading-relaxed">
+            <span class="text-neon-green mr-2">⊞</span>
+            <a
+                href="/best/prediction-market-platforms"
+                class="text-neon-green underline decoration-dotted underline-offset-2 hover:text-white transition-colors"
+            >
+                Best prediction market platforms — October 2026
+            </a>
+            <span class="text-gray-500">
+                — fees on the same trade, who can trade where, liquidity signals and API access, each with a source and a date checked.
+            </span>
+        </p>
+    </div>
+    {/if}
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {#each filteredTools as tool (tool.id)}
             <ToolCard {tool} />
