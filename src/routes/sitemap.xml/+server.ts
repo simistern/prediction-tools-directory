@@ -35,6 +35,12 @@ export async function GET() {
         '/best/prediction-market-platforms'
     ];
 
+    // Reference pages that explain the market rather than list tools. They change when the law
+    // does, which is more often than a monthly edition but less often than the directory.
+    const referencePages = [
+        '/learn/prediction-markets'
+    ];
+
     const categories = [...new Set(tools.map(tool => tool.category))];
 
     const urlEntries = [
@@ -61,6 +67,11 @@ export async function GET() {
         ...editorialPages.map(page => ({
             loc: `${site}${page}`,
             changefreq: 'monthly',
+            priority: '0.9'
+        })),
+        ...referencePages.map(page => ({
+            loc: `${site}${page}`,
+            changefreq: 'weekly',
             priority: '0.9'
         }))
     ];
