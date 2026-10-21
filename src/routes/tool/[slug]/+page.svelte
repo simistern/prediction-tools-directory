@@ -10,33 +10,9 @@
     // Cast from JSON union type to our full schema type
     $: t = tool as unknown as Tool;
 
-    // Cross-page compare links for the venues that have a written comparison.
-    const comparisons: Record<string, { href: string; label: string; blurb: string; also?: { href: string; label: string }[] }> = {
-        polymarket: {
-            href: "/compare/polymarket-vs-kalshi",
-            label: "How Polymarket compares to Kalshi on fees, access and settlement",
-            blurb:
-                "a dated comparison with both fee formulas, who can actually trade in which country, and how each venue settles",
-        },
-        kalshi: {
-            href: "/compare/polymarket-vs-kalshi",
-            label: "How Kalshi compares to Polymarket on fees, access and settlement",
-            blurb:
-                "a dated comparison with both fee formulas, who can actually trade in which country, and how each venue settles",
-        },
-        robinhood: {
-            href: "/compare/polymarket-vs-kalshi",
-            label: "Robinhood resells exchange contracts, so the venue comparison still decides the cost",
-            blurb:
-                "a dated comparison of two of the exchanges behind its order flow, with both fee formulas and who can trade where",
-            also: [
-                { href: "/tool/polymarket", label: "Polymarket profile" },
-                { href: "/tool/kalshi", label: "Kalshi profile" },
-            ],
-        },
-    };
-
-    $: comparison = comparisons[t.slug] ?? null;
+    // Cross-page compare links. Built from `compareWith` in the record (see +page.ts), so a
+    // researched pair appears on both profiles without editing this component.
+    $: compareLinks = data.compareLinks ?? [];
 
     let copied = false;
     async function copyToClipboard() {
@@ -322,32 +298,23 @@
                         </p>
                     </div>
 
-                    {#if comparison}
+                    {#if compareLinks.length > 0}
+                    {#each compareLinks as link}
                     <div class="border border-neon-green/30 bg-terminal-black p-5">
                         <p class="text-sm font-mono text-gray-300 leading-relaxed">
                             <span class="text-neon-green mr-2">⬌</span>
                             <a
-                                href={comparison.href}
+                                href={link.href}
                                 class="text-neon-green underline decoration-dotted underline-offset-2 hover:text-white transition-colors"
                             >
-                                {comparison.label}
+                                {link.label}
                             </a>
                             <span class="text-gray-500">
-                                — {comparison.blurb}. Every figure sourced and dated.
+                                — {link.blurb}.
                             </span>
                         </p>
-                        {#if comparison.also}
-                        <p class="text-xs font-mono text-gray-500 mt-3">
-                            Also on this site:
-                            {#each comparison.also as link, i}
-                                <a
-                                    href={link.href}
-                                    class="text-neon-blue hover:text-white underline decoration-dotted underline-offset-2"
-                                >{link.label}</a>{i < comparison.also.length - 1 ? " · " : ""}
-                            {/each}
-                        </p>
-                        {/if}
                     </div>
+                    {/each}
                     {/if}
 
                     {#if t.pricingDetails}

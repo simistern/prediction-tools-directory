@@ -29,6 +29,10 @@
         "supportedMarkets": [
             "Polymarket"
         ],
+        "compareWith": [
+            "kalshi",
+            "robinhood"
+        ],
         "platform": [
             "Web",
             "iOS",
@@ -68,6 +72,10 @@
         "lastVerified": "2026-10-21",
         "supportedMarkets": [
             "Kalshi"
+        ],
+        "compareWith": [
+            "polymarket",
+            "robinhood"
         ],
         "platform": [
             "Web",
@@ -110,6 +118,10 @@
         "addedDate": "2026-10-21",
         "supportedMarkets": [
             "Robinhood"
+        ],
+        "compareWith": [
+            "kalshi",
+            "polymarket"
         ],
         "platform": [
             "iOS",
