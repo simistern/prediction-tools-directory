@@ -94,6 +94,15 @@
                 >Follow on X</span
             >
         </a>
+        <div class="pt-2">
+            <a
+                href="/best/prediction-market-platforms"
+                class="inline-flex items-center space-x-2 border border-terminal-slate hover:border-neon-green text-gray-400 hover:text-neon-green font-mono text-xs uppercase px-4 py-2 transition-colors"
+            >
+                <span class="text-neon-green">⊞</span>
+                <span>Best platforms — October 2026 edition</span>
+            </a>
+        </div>
     </div>
 
     <div class="relative w-full">
