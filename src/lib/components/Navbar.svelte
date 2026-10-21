@@ -58,6 +58,16 @@
           /COMPARE
         </a>
         <a
+          href="/learn/prediction-markets"
+          class="text-gray-300 hover:text-neon-blue px-3 py-2 rounded-md text-sm font-medium transition-colors font-mono {activeRoute.startsWith(
+            '/learn'
+          )
+            ? 'text-neon-blue'
+            : ''}"
+        >
+          /LEARN
+        </a>
+        <a
           href="/submit"
           class="text-gray-300 hover:text-neon-blue px-3 py-2 rounded-md text-sm font-medium transition-colors font-mono {activeRoute ===
           '/submit'
@@ -147,6 +157,17 @@
         on:click={() => (isMenuOpen = false)}
       >
         /COMPARE
+      </a>
+      <a
+        href="/learn/prediction-markets"
+        class="block text-gray-300 hover:text-neon-blue px-3 py-4 text-base font-medium transition-colors font-mono {activeRoute.startsWith(
+          '/learn'
+        )
+          ? 'text-neon-blue border-l-2 border-neon-blue pl-4'
+          : ''}"
+        on:click={() => (isMenuOpen = false)}
+      >
+        /LEARN
       </a>
       <a
         href="/submit"
