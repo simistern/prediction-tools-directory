@@ -755,7 +755,7 @@
         "pricing": "Free",
         "pricingDetails": "Free social prediction market aggregator.",
         "access": "Public",
-        "status": "active",
+        "status": "shut-down",
         "addedDate": "2026-03-10",
         "lastVerified": "2026-10-18",
         "supportedMarkets": [
@@ -790,7 +790,7 @@
         "pricing": "Paid",
         "pricingDetails": "Subscription-based AI quant platform. Pricing available on request.",
         "access": "Public",
-        "status": "active",
+        "status": "shut-down",
         "addedDate": "2026-03-10",
         "lastVerified": "2026-10-18",
         "supportedMarkets": [
