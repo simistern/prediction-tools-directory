@@ -3824,5 +3824,47 @@
             "Enterprise S3 Export",
             "Backtesting Data"
         ]
+    },
+    {
+        "id": "thinblimp",
+        "name": "ThinBlimp",
+        "slug": "thinblimp",
+        "shortDescription": "Puts Kalshi and Polymarket prices in cents beside de-vigged sportsbook odds, with the cross-venue gap.",
+        "description": "ThinBlimp normalises prices across prediction markets and sportsbooks onto one 0-100 scale in cents, with the American odds alongside: Kalshi and Polymarket beside DraftKings, FanDuel and Pinnacle, the books de-vigged to a no-vig line, and the cross-venue gap shown per game. In-play markets stream off the exchange sockets - the operator cites roughly a second of latency and no polling - while long-dated politics runs from tonight's slate out to multi-year horizons (the site shows the 2028 presidential field). Connecting an account marks your own positions on the rows you hold and consolidates P&L and exposure across venues. Read-only by construction: it places no trades and holds no funds. The terminal is free; Pro covers history, watchlists and alerts.",
+        "category": "Market Intelligence",
+        "url": "https://thinblimp.com",
+        "xUrl": "https://x.com/ThinBlimp",
+        "tags": [
+            "Cross-Venue",
+            "Odds Comparison",
+            "Sportsbooks",
+            "Fees",
+            "Elections",
+            "Sports"
+        ],
+        "isPromoted": false,
+        "pricing": "Freemium",
+        "pricingDetails": "Freemium: the terminal is free. Pro is $39/month at the founding price (locked for members) for cross-venue history, watchlists and price alerts. Odds converter, no-vig fair value and fee calculator are free without an account.",
+        "access": "Public",
+        "status": "active",
+        "addedDate": "2026-10-23",
+        "lastVerified": "2026-10-24",
+        "supportedMarkets": [
+            "Kalshi",
+            "Polymarket",
+            "Polymarket US"
+        ],
+        "platform": [
+            "Web"
+        ],
+        "features": [
+            "Cross-Venue Price Normalisation",
+            "Exchange vs Sportsbook (No-Vig)",
+            "Cross-Venue Gap in Cents",
+            "Sub-Second In-Play Streaming",
+            "Account-Linked Position View",
+            "Odds Converter, No-Vig and Fee Calculator",
+            "Read-Only by Construction"
+        ]
     }
 ]
