@@ -213,7 +213,8 @@
         ],
         "features": [
             "Yield-bearing Positions",
-            "Market Trading"
+            "Market Trading",
+            "15-Minute Up/Down Markets"
         ]
     },
     {
@@ -252,7 +253,8 @@
             "Daily Payouts",
             "Instant Settlement",
             "No Liquidation Risk",
-            "No Hidden Fees"
+            "No Hidden Fees",
+            "Custom Market Packs"
         ]
     },
     {
@@ -545,7 +547,8 @@
             "Mobile-first Trading",
             "Real-time Data",
             "AI-powered Insights",
-            "Trend Analysis"
+            "Trend Analysis",
+            "Limit Orders (GTC/GTD/FAK/FOK)"
         ]
     },
     {
@@ -860,7 +863,7 @@
         "pricing": "Free",
         "pricingDetails": "Free real-time Kalshi market data and analytics.",
         "access": "Public",
-        "status": "active",
+        "status": "shut-down",
         "addedDate": "2026-03-10",
         "lastVerified": "2026-10-18",
         "supportedMarkets": [
@@ -1312,7 +1315,7 @@
         ],
         "isPromoted": false,
         "pricing": "Free",
-        "pricingDetails": "Free to use. Low fees on peer-to-peer bets. SX token rewards via Bet Mining.",
+        "pricingDetails": "Free to use. Taker fee: 1% of profit on winning bets; 0% for makers and 0% on losing bets. SX token rewards via Bet Mining.",
         "access": "Public",
         "status": "active",
         "addedDate": "2026-03-15",
@@ -2293,7 +2296,7 @@
         ],
         "isPromoted": false,
         "pricing": "Free",
-        "pricingDetails": "Free to trade. BNB Chain gas fees apply.",
+        "pricingDetails": "Free to trade. Zero maker fees with maker rebates on selected markets. BNB Chain gas fees apply.",
         "access": "Public",
         "status": "active",
         "addedDate": "2026-04-01",
@@ -2375,7 +2378,7 @@
         "pricing": "Free",
         "pricingDetails": "Protocol is free to use. $RAIN token available on Gate exchange. Standard Arbitrum gas fees apply.",
         "access": "Public",
-        "status": "active",
+        "status": "shut-down",
         "addedDate": "2026-06-25",
         "lastVerified": "2026-10-05",
         "blockchain": [
@@ -2467,7 +2470,8 @@
         "features": [
             "Sports Predictions",
             "Real-world Events",
-            "Prize Pools"
+            "Prize Pools",
+            "5-Minute Crypto Markets"
         ]
     },
     {
@@ -3402,7 +3406,8 @@
             "Crypto",
             "Leveraged Outcomes",
             "DeFi",
-            "On-Chain"
+            "On-Chain",
+            "Sports"
         ],
         "isPromoted": false,
         "pricing": "Freemium",
@@ -3571,6 +3576,168 @@
             "Multi-Agent Predictions",
             "Daily Politics & Geopolitics Coverage",
             "Benchmarked Against Polymarket & Kalshi"
+        ]
+    },
+    {
+        "id": "predxy",
+        "name": "Predxy",
+        "slug": "predxy",
+        "shortDescription": "Combines the same question across 15 prediction venues into one volume-weighted probability.",
+        "description": "Predxy is a prediction market aggregator: it matches the same question across 15 venues, including Polymarket, Kalshi, Limitless, Hyperliquid, Outcome, Novig, Myriad and Gemini, and combines their prices into a single volume-weighted probability per question. The site ranks questions by 24-hour volume, compares venues side by side, keeps a watchlist and a market calendar, and publishes an experimental 'Fear & Greed' proxy derived from market activity rather than sentiment. The operator describes the goal as a consumer interface for probabilities, with prediction markets as the underlying data source. Publicly browsable; commercial and data terms are arranged directly with the operator.",
+        "category": "Infrastructure & APIs",
+        "url": "https://predxy.com",
+        "xUrl": "https://x.com/onPredxy",
+        "tags": [
+            "Prediction Markets",
+            "Aggregator",
+            "Data",
+            "API",
+            "Cross-Venue"
+        ],
+        "isPromoted": false,
+        "pricing": "Custom",
+        "pricingDetails": "Custom: the site publishes no price list; commercial and data licences are arranged directly with the operator. Browsing the aggregator is public.",
+        "access": "Public",
+        "status": "active",
+        "addedDate": "2026-10-23",
+        "lastVerified": "2026-10-23",
+        "supportedMarkets": [
+            "Polymarket",
+            "Kalshi",
+            "Limitless",
+            "Hyperliquid",
+            "Outcome",
+            "Gemini"
+        ],
+        "platform": [
+            "Web",
+            "Mobile"
+        ],
+        "features": [
+            "Cross-Venue Question Matching",
+            "Volume-Weighted Probability",
+            "Top 100 by 24h Volume",
+            "Venue Comparison",
+            "Watchlist",
+            "Market Calendar"
+        ]
+    },
+    {
+        "id": "macro-markets",
+        "name": "Macro Markets",
+        "slug": "macro-markets",
+        "shortDescription": "Prediction market platform covering politics, elections, economics, sports and global events.",
+        "description": "Macro Markets is a web-based prediction market platform covering politics, elections, economics, sports and global events, with live probabilities per outcome, search and category filters, and position tracking. The site also publishes educational material on pricing, liquidity and market resolution. Browsing needs no account; participation is subject to the platform's terms and eligibility checks. Trading fees are not published on the site, and the submitter explicitly did not assert that browsing implies fee-free trading.",
+        "category": "Platforms",
+        "url": "https://macro.markets",
+        "xUrl": "https://x.com/MacroMarketsInc",
+        "tags": [
+            "Prediction Markets",
+            "Trading",
+            "Politics",
+            "Economics",
+            "Sports"
+        ],
+        "isPromoted": false,
+        "pricing": "Free",
+        "pricingDetails": "Free to browse without an account. Trading fees are not published on the site and no fee-free claim is made for trading — confirm the current schedule with the platform. Account opening may require identity and eligibility checks.",
+        "access": "Public",
+        "status": "active",
+        "addedDate": "2026-10-23",
+        "lastVerified": "2026-10-23",
+        "supportedMarkets": [
+            "Macro Markets"
+        ],
+        "platform": [
+            "Web"
+        ],
+        "features": [
+            "Live Market Probabilities",
+            "Politics and Elections Markets",
+            "Sports and Economics Markets",
+            "Search and Category Filters",
+            "Position Tracking",
+            "Educational Articles on Pricing and Resolution"
+        ]
+    },
+    {
+        "id": "mktgap",
+        "name": "MKTGAP",
+        "slug": "mktgap",
+        "shortDescription": "Measures price gaps across Polymarket, Kalshi, PredictIt, Limitless and Gemini after trading fees.",
+        "description": "MKTGAP compares the price of the same event on Polymarket, Kalshi, PredictIt, Limitless and Gemini Predictions, then measures how much of the difference survives each platform's trading fees using the official fee formulas (Kalshi fee schedule dated 7 July 2026, Polymarket fee documentation verified 23 September 2026). Free tools include a cross-platform fee calculator, platform guides on fees and eligibility by country, a Kalshi vs Polymarket comparison, a glossary and a published methodology. Public pages show prices with a five-minute delay. MKTGAP does not execute trades.",
+        "category": "Analysis Tools",
+        "url": "https://mktgap.com",
+        "xUrl": "https://x.com/mktgapcom",
+        "tags": [
+            "Analytics",
+            "Arbitrage",
+            "Fees",
+            "Research",
+            "Data"
+        ],
+        "isPromoted": false,
+        "pricing": "Freemium",
+        "pricingDetails": "Freemium: the fee calculator, platform guides and comparison pages are free; paid tiers are not detailed on the site.",
+        "access": "Public",
+        "status": "active",
+        "addedDate": "2026-10-23",
+        "lastVerified": "2026-10-23",
+        "supportedMarkets": [
+            "Polymarket",
+            "Kalshi",
+            "PredictIt",
+            "Limitless",
+            "Gemini"
+        ],
+        "platform": [
+            "Web"
+        ],
+        "features": [
+            "Cross-Platform Fee Calculator",
+            "Fee-Adjusted Gap Measurement",
+            "Platform Fee and Eligibility Guides",
+            "Kalshi vs Polymarket Comparison",
+            "Published Methodology",
+            "Glossary"
+        ]
+    },
+    {
+        "id": "strikeping",
+        "name": "StrikePing",
+        "slug": "strikeping",
+        "shortDescription": "Public BTC 15-minute shadow record on Kalshi contracts, plus a separate BTC/ETH/SOL spot-alert membership.",
+        "description": "StrikePing publishes a public shadow record for Kalshi's 15-minute BTC contracts: prospective estimates, abstentions and skipped decisions are mapped to real KXBTC15M contracts and graded against official outcomes, with early calls and later updates recorded separately. Estimates use an independent Coinbase spot proxy rather than Kalshi's settlement benchmark, and the operator states the collection is still undergoing reliability validation, with historical gaps and rate-limit interruptions visible; the record does not establish profitable trading. A separate $29/month membership delivers BTC, ETH and SOL spot alerts via private Telegram, the web and optional email — it does not include contract alerts or trade execution. Operated by CurrentIQ LLC.",
+        "category": "Analysis Tools",
+        "url": "https://strikeping.com",
+        "xUrl": "https://strikeping.com",
+        "tags": [
+            "BTC",
+            "Alerts",
+            "Kalshi",
+            "15-Minute Contracts",
+            "Spot Reference"
+        ],
+        "isPromoted": false,
+        "pricing": "Paid",
+        "pricingDetails": "Paid: $29/month plus applicable tax for the BTC/ETH/SOL spot-alert membership (Telegram, web, optional email). The BTC contract shadow record is free to inspect. No trade execution.",
+        "access": "Public",
+        "status": "active",
+        "addedDate": "2026-10-23",
+        "lastVerified": "2026-10-23",
+        "supportedMarkets": [
+            "Kalshi"
+        ],
+        "platform": [
+            "Web",
+            "Telegram"
+        ],
+        "features": [
+            "BTC 15-Minute Contract Shadow Record",
+            "Independent Coinbase Spot Proxy",
+            "Outcome-Graded Decisions",
+            "BTC/ETH/SOL Spot Alerts",
+            "Telegram and Web Delivery"
         ]
     }
 ]
