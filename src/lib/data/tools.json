@@ -3739,5 +3739,90 @@
             "BTC/ETH/SOL Spot Alerts",
             "Telegram and Web Delivery"
         ]
+    },
+    {
+        "id": "polyedge",
+        "name": "PolyEdge",
+        "slug": "polyedge",
+        "shortDescription": "Streams pending Polymarket trades from the Polygon mempool, with an on-chain analytics API.",
+        "description": "PolyEdge streams pending Polymarket trades from the Polygon mempool before they are included in a block, and provides an on-chain analytics API for trade-by-trade attribution, smart-money tracking and realised P&L. Delivery is server-sent events rather than polling. Aimed at copy-trading bots, traders and prediction market builders; a free tier sits alongside Starter, Individual and Builder plans.",
+        "category": "Analysis Tools",
+        "url": "https://polyedge.dev",
+        "xUrl": "https://x.com/PolyEdgeDev",
+        "tags": [
+            "Polymarket",
+            "Mempool",
+            "Low Latency",
+            "SSE",
+            "API",
+            "Real-Time Analytics"
+        ],
+        "isPromoted": false,
+        "pricing": "Freemium",
+        "pricingDetails": "Freemium: free tier available; Starter, Individual and Builder plans for production workloads.",
+        "access": "Public",
+        "status": "active",
+        "addedDate": "2026-10-20",
+        "lastVerified": "2026-10-24",
+        "supportedMarkets": [
+            "Polymarket"
+        ],
+        "platform": [
+            "Web",
+            "API"
+        ],
+        "blockchain": [
+            "Polygon"
+        ],
+        "features": [
+            "Real-Time Mempool Streaming",
+            "Pre-Block Trade Detection",
+            "Smart Money Tracking",
+            "Trade-by-Trade Attribution",
+            "Realized PnL Calculation",
+            "Multi-Dimensional Tag & Series Isolation"
+        ]
+    },
+    {
+        "id": "polyorderbooks",
+        "name": "PolyOrderbooks",
+        "slug": "polyorderbooks",
+        "shortDescription": "250ms historical Polymarket L2 order books, prices and liquidity via REST API and Python SDK.",
+        "description": "PolyOrderbooks serves historical Polymarket L2 order book snapshots at 250ms resolution, with price history and liquidity metrics, through a REST API and an official Python SDK. The operator reports coverage of 1.16 million crypto and sports markets and 2.5 billion L2 snapshots. A free Starter tier sits alongside Pro and Scale subscriptions, with enterprise S3 bulk exports for larger pulls.",
+        "category": "Infrastructure & APIs",
+        "url": "https://polyorderbooks.com",
+        "xUrl": "https://x.com/polyorderbooks",
+        "tags": [
+            "API",
+            "Historical Data",
+            "Order Book",
+            "L2",
+            "Polymarket",
+            "Backtesting",
+            "Python SDK"
+        ],
+        "isPromoted": false,
+        "pricing": "Freemium",
+        "pricingDetails": "Freemium: free Starter tier; Pro and Scale subscriptions, plus Enterprise S3 bulk exports for custom limits.",
+        "access": "Public",
+        "status": "active",
+        "addedDate": "2026-08-13",
+        "lastVerified": "2026-10-24",
+        "supportedMarkets": [
+            "Polymarket"
+        ],
+        "platform": [
+            "Web",
+            "API"
+        ],
+        "features": [
+            "Historical L2 Order Books",
+            "Price History",
+            "Liquidity Metrics",
+            "REST API",
+            "Python SDK",
+            "Enterprise S3 Export",
+            "Backtesting Data"
+        ]
     }
 ]
