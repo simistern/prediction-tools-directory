@@ -54,6 +54,14 @@ export type Tool = {
 	notGoodFor?: string[];
 
 	/**
+	 * Extra outbound links rendered under the description, exactly as given.
+	 * Unlike the "Visit website" button these are never tagged with utm_source —
+	 * use them when an operator asks for a specific, untagged page to be linked
+	 * (e.g. a public shadow record that is not the site root).
+	 */
+	links?: { label: string; url: string }[];
+
+	/**
 	 * Slugs of tools this one has a researched comparison page against.
 	 * Pairs are mutual (both records list each other) and drive /compare pages,
 	 * sitemap entries and the profile cross-links. Researched demand lives in the

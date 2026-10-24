@@ -3738,6 +3738,12 @@
             "Outcome-Graded Decisions",
             "BTC/ETH/SOL Spot Alerts",
             "Telegram and Web Delivery"
+        ],
+        "links": [
+            {
+                "label": "KXBTC15M shadow record",
+                "url": "https://strikeping.com/demo/kalshi-btc"
+            }
         ]
     },
     {

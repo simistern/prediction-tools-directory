@@ -25,8 +25,12 @@
         }
     }
 
-    // Extract X username from xUrl
-    $: xUsername = t.xUrl ? t.xUrl.split("/").pop() : null;
+    // Only x.com / twitter.com are X profiles. Tools without an X account keep their
+    // site URL in xUrl as a fallback (12 records do); rendering that as "Follow on X"
+    // sends readers to the tool's own homepage, so the button is gated on the host.
+    const isXProfile = (u?: string) => !!u && /^https?:\/\/(www\.)?(x|twitter)\.com\//i.test(u);
+    $: isX = isXProfile(t.xUrl);
+    $: xUsername = isX ? t.xUrl.replace(/\/+$/, "").split("/").pop() : null;
 
     // Pricing badge styling
     function pricingStyle(pricing: string | undefined) {
@@ -65,7 +69,7 @@
 
     // Load X widgets.js on mount
     onMount(() => {
-        if (t.xUrl && typeof window !== "undefined") {
+        if (isX && typeof window !== "undefined") {
             const script = document.createElement("script");
             script.src = "https://xembed-20260323.web.app/widget.js";
             script.async = true;
@@ -263,7 +267,7 @@
                         {/if}
                     </button>
 
-                    {#if t.xUrl}
+                    {#if isX}
                         <a
                             href={t.xUrl}
                             target="_blank"
@@ -297,6 +301,33 @@
                             {t.description}
                         </p>
                     </div>
+
+                    <!-- Direct links: exact URLs the operator asked to be listed. Never
+                         tagged with utm_source, unlike the VISIT WEBSITE button. -->
+                    {#if t.links?.length}
+                    <div class="border border-terminal-slate bg-terminal-black p-5">
+                        <h3
+                            class="text-sm font-mono text-gray-500 uppercase tracking-wider mb-3 flex items-center"
+                        >
+                            <span class="text-neon-green mr-2">→</span>Direct Links
+                        </h3>
+                        <ul class="space-y-2">
+                            {#each t.links as link}
+                                <li class="text-sm font-mono text-gray-300">
+                                    <a
+                                        href={link.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-neon-green underline decoration-dotted underline-offset-2 hover:text-white transition-colors"
+                                    >{link.label}</a>
+                                    <span class="text-gray-500 ml-2"
+                                        >{link.url.replace(/^https?:\/\//, "")}</span
+                                    >
+                                </li>
+                            {/each}
+                        </ul>
+                    </div>
+                    {/if}
 
                     {#if compareLinks.length > 0}
                     {#each compareLinks as link}

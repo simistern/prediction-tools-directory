@@ -123,6 +123,30 @@ for (const [index, tool] of tools.entries()) {
 		}
 	}
 
+	if (tool.links !== undefined) {
+		if (!Array.isArray(tool.links)) {
+			errors.push(`${label}: "links" must be an array`);
+		} else {
+			tool.links.forEach((link, i) => {
+				if (!link || typeof link.label !== 'string' || link.label.trim().length === 0) {
+					errors.push(`${label}: links[${i}] needs a non-empty label`);
+				}
+				if (!link || typeof link.url !== 'string') {
+					errors.push(`${label}: links[${i}] needs a url`);
+					return;
+				}
+				try {
+					const parsed = new URL(link.url);
+					if (!['http:', 'https:'].includes(parsed.protocol)) {
+						errors.push(`${label}: links[${i}] must use http/https`);
+					}
+				} catch {
+					errors.push(`${label}: links[${i}] must be a valid URL`);
+				}
+			});
+		}
+	}
+
 	if (typeof tool.isPromoted !== 'undefined' && typeof tool.isPromoted !== 'boolean') {
 		errors.push(`${label}: "isPromoted" must be a boolean when provided`);
 	}
