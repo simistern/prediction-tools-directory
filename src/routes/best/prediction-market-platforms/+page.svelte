@@ -488,6 +488,11 @@
           contracts, and trading there is app-only, so any workflow you build around it is manual.
         </li>
       </ol>
+      <p class="text-gray-400 font-mono text-xs leading-relaxed mt-5 pt-4 border-t border-terminal-slate">
+        New to event contracts? What they are and how each venue came to be regulated is covered,
+        with sources, in
+        <a href="/learn/prediction-markets" class="text-neon-green underline decoration-dotted underline-offset-2 hover:text-white transition-colors">what is a prediction market, and is Kalshi legal?</a>.
+      </p>
     </div>
   </section>
 

@@ -94,13 +94,27 @@
                 >Follow on X</span
             >
         </a>
-        <div class="pt-2">
+        <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
             <a
                 href="/best/prediction-market-platforms"
                 class="inline-flex items-center space-x-2 border border-terminal-slate hover:border-neon-green text-gray-400 hover:text-neon-green font-mono text-xs uppercase px-4 py-2 transition-colors"
             >
                 <span class="text-neon-green">⊞</span>
                 <span>Best platforms — October 2026 edition</span>
+            </a>
+            <a
+                href="/compare/polymarket-vs-kalshi"
+                class="inline-flex items-center space-x-2 border border-terminal-slate hover:border-neon-green text-gray-400 hover:text-neon-green font-mono text-xs uppercase px-4 py-2 transition-colors"
+            >
+                <span class="text-neon-green">⬌</span>
+                <span>Polymarket vs Kalshi comparison</span>
+            </a>
+            <a
+                href="/learn/prediction-markets"
+                class="inline-flex items-center space-x-2 border border-terminal-slate hover:border-neon-green text-gray-400 hover:text-neon-green font-mono text-xs uppercase px-4 py-2 transition-colors"
+            >
+                <span class="text-neon-green">?</span>
+                <span>What is a prediction market?</span>
             </a>
         </div>
     </div>

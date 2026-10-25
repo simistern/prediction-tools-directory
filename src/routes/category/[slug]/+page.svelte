@@ -87,6 +87,17 @@
                 {description}
             </p>
         </div>
+        <p class="text-sm font-mono text-gray-500 mt-4">
+            <span class="text-neon-green mr-2">?</span>
+            New to the category?
+            <a
+                href="/learn/prediction-markets"
+                class="text-neon-green underline decoration-dotted underline-offset-2 hover:text-white transition-colors"
+            >
+                What are prediction markets?</a
+            >
+            — a sourced explainer on how they work and how they are regulated.
+        </p>
     </div>
 
     {#if categorySlug === "platforms"}

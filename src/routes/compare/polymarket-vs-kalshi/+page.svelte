@@ -880,6 +880,22 @@
       resolves in a way you disagree with — the dispute process described below is the only recourse.
       Neither is the safer choice in the abstract; they fail differently.
     </p>
+
+    <p class="text-gray-400 font-mono text-xs leading-relaxed mt-4">
+      The paperwork behind that — the CFTC designations, the state suits and the appeals — is set out
+      with sources in
+      <a
+        href="/learn/prediction-markets"
+        class="text-neon-green underline decoration-dotted underline-offset-2 hover:text-white transition-colors"
+        >prediction market regulation explained</a
+      >, and if you are choosing between more than these two venues, the
+      <a
+        href="/best/prediction-market-platforms"
+        class="text-neon-blue underline decoration-dotted underline-offset-2 hover:text-white transition-colors"
+        >wider platform comparison</a
+      >
+      prices Robinhood on the same trade.
+    </p>
   </section>
 
   <!-- Settlement -->

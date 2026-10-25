@@ -302,6 +302,24 @@
                         </p>
                     </div>
 
+                    <!-- Learn hub. One contextual link from every tool profile: the explainer
+                         covers the regulation, fees and settlement the profiles only summarise. -->
+                    <div class="border border-terminal-slate bg-terminal-black p-5">
+                        <p class="text-sm font-mono text-gray-300 leading-relaxed">
+                            <span class="text-neon-green mr-2">?</span>
+                            <a
+                                href="/learn/prediction-markets"
+                                class="text-neon-green underline decoration-dotted underline-offset-2 hover:text-white transition-colors"
+                            >
+                                Learn about prediction markets
+                            </a>
+                            <span class="text-gray-500">
+                                — how they are regulated, how fees and settlement work, and who can
+                                trade where.
+                            </span>
+                        </p>
+                    </div>
+
                     <!-- Direct links: exact URLs the operator asked to be listed. Never
                          tagged with utm_source, unlike the VISIT WEBSITE button. -->
                     {#if t.links?.length}
